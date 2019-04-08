@@ -24,4 +24,7 @@ public interface RecipesDao {
 
     @Query("DELETE FROM Recipe")
     void cleanData();
+
+    @Query("SELECT * FROM Recipe WHERE id = :id")
+    Recipe load(int id);
 }

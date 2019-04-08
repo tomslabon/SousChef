@@ -93,7 +93,7 @@ public class RecipeDaoTest {
     }
 
     @Test
-    public void shouldGetRecipe() {
+    public void shouldGetRecipeById() {
 
     }
 
