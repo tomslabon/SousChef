@@ -1,10 +1,8 @@
 package com.souschef.recipes.domain;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.Relation;
+import android.support.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -21,19 +19,20 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
-@Entity
-public class Recipe {
-
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+public class Recipe implements Serializable {
 
     private String dishName;
 
-    @Ignore
-    private List<Ingredient> ingredients = Collections.emptyList();
+    private List<Step> Steps;
 
-    @Ignore
-    private List<Step> steps = Collections.emptyList();
+    private int timeToProduce;
+
+    private String image;
+
+//    @Ignore
+//    private List<Ingredient> ingredients = Collections.emptyList();
+//
+//    @Ignore
+//    private List<Step> steps = Collections.emptyList();
 
 }

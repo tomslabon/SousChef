@@ -1,8 +1,5 @@
 package com.souschef.recipes.domain;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,10 +14,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Entity
 public class Ingredient {
 
-    @PrimaryKey(autoGenerate = true)
     private int id;
 
     private String ingeredientName;

@@ -1,9 +1,5 @@
 package com.souschef.recipes.domain;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,17 +10,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-@Entity
+@Builder
 public class Step {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
-
-    private int stepNumber;
+    private int number;
 
     private String description;
 
-    @ForeignKey(entity = Recipe.class, parentColumns = "id", childColumns = "recipeId")
     private int recipeId;
 }
